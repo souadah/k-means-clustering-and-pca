@@ -25,7 +25,8 @@ for i = 1:size(X,1)
     for k = 1:K
         distances(k) = sqrt(sum((X(i,:) - centroids(k,:)).^2 ));
     end
-    idx(i) = find(distances == min(distances));
+    dummy = find(distances == min(distances));
+    idx(i) = dummy(1);
 end
 
 % =============================================================
